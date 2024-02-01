@@ -1,4 +1,5 @@
 import noticias from "@/utils/noticias"
+import Image from "next/image"
 import Link from "next/link"
 
 const News = () => {
@@ -9,7 +10,7 @@ const News = () => {
             {noticias.map(item => {
                 return (
                     <Link href={{pathname:`/NoticiaPage/${item.id}`}} className='hover:scale-105 news-card h-[450px] overflow-hidden w-[350px] relative rounded-xl' key={item.id}>
-                        <img className='object-cover transition duration-300 w-full h-full rounded-xl' src={item.img.src} alt={item.titulo} />
+                        <Image width={350} height={450} className='object-cover transition duration-300 w-full h-full rounded-xl' src={item.img.src} alt={item.titulo} />
                         <div className='news-title absolute flex flex-col justify-center bottom-0 w-full h-[150px] p-3 rounded-xl rounded-t-none bg-[rgba(0,0,0,.4)]'>
                             <h2 className='text-white transition duration-300 opacity-100 text-center text-[1.4rem] font-semibold'>{item.titulo}</h2>
                         </div>

@@ -1,6 +1,6 @@
 import { LojaContext } from "@/context/LojaContext"
 import formatCurrency from "@/utils/formatCurrency"
-import { rpg } from "@/utils/produtos"
+import Image from "next/image"
 import { useRef, useEffect, useState, useContext, memo } from "react"
 
 import { BiChevronLeft } from "react-icons/bi"
@@ -57,7 +57,7 @@ const SliderProducts = memo(({title, type}:any) => {
                     {type.map((item:itemProps) => {
                         return (
                             <div className='carousel-loja-card rounded-lg relative flex-none w-[300px] h-[400px]' key={item.id}>
-                                <img loading="lazy" className='w-full h-full object-cover hover:opacity-95 transition duration-300 rounded-lg' src={item.img.src} alt={item.title} />
+                                <Image priority width={350} height={450} className='w-full h-full object-cover hover:opacity-95 transition duration-300 rounded-lg' src={item.img.src} alt={item.title} />
                                 <div className="info rounded-b-lg bg-[rgba(0,0,0,.6)] p-4 w-full absolute bottom-0">
                                     <h2 className='text-[1.3rem] font-semibold'>{item.title}</h2>
                                     <h2 className='text-[1.3rem] mb-2 font-bold'>{formatCurrency(item.price)}</h2>
@@ -75,5 +75,7 @@ const SliderProducts = memo(({title, type}:any) => {
         </div>
   )
 })
+
+SliderProducts.displayName = 'SliderProducts'
 
 export default SliderProducts

@@ -1,5 +1,6 @@
 import { LojaContext } from "@/context/LojaContext"
 import formatCurrency from "@/utils/formatCurrency"
+import Image from "next/image"
 import { useContext } from "react"
 
 const Cart = () => {
@@ -22,9 +23,9 @@ const Cart = () => {
 
                 {cart.map(item => {
                     return (
-                        <div className='cart-item border-b border-slate-950 pt-3 pb-2'>
+                        <div key={item.id} className='cart-item border-b border-slate-950 pt-3 pb-2'>
                             <div className='flex gap-5'>
-                                <img className='h-[100px] w-[200px] object-cover' src={item.img.src} alt={item.title} />
+                                <Image width={250} height={150} className='h-[100px] w-[200px] object-cover' src={item.img.src} alt={item.title} />
                                 <div>
                                     <h3 className='text-[1.2rem]'>Qtd: {item.quantity}</h3>
                                     <div className='flex'>

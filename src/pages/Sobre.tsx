@@ -1,4 +1,5 @@
 import joystick from '@/assets/img/joystick.png'
+import Image from 'next/image'
 
 const Sobre = () => {
   return (
@@ -7,7 +8,7 @@ const Sobre = () => {
         <div className="sobre w-full flex flex-col justify-center">
             <div className="titulo text-[1.7rem] relative">
               <h2 className='text-center mb-10 ml-2'>Nossa Paixão por Jogos</h2>
-              <img className='w-[80px] absolute right-0 bottom-0 hidden sm:block' src={joystick.src} />
+              <Image width={80} height={80} className='w-[80px] h-[80px] absolute right-0 bottom-0 hidden sm:block' src={joystick} alt='joystick' />
             </div>
             <p className='p-sobre'>
                 Bem-vindo à nossa loja de jogos! Somos um grupo apaixonado por jogos, e nossa missão é proporcionar a você a melhor experiência de entretenimento digital.

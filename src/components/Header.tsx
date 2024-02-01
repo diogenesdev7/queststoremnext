@@ -6,6 +6,7 @@ import { BiJoystick } from "react-icons/bi";
 import { IoCartOutline } from "react-icons/io5";
 import joystick from '@/assets/img/joystick.png'
 import { LojaContext } from "@/context/LojaContext";
+import Image from "next/image";
 
 const Header = () => {
   const {qtd, handleIsCartActive} = useContext(LojaContext)
@@ -36,7 +37,7 @@ const Header = () => {
               <Link className='link' href='/'>Home</Link>
               <Link className='link' href='/Sobre'>Sobre</Link>
               <Link className='link' href='/Loja'>Loja</Link>
-              <img src={joystick.src} alt="joystick image" className='w-[4rem] absolute bottom-28 right-7' />
+              <Image width={60} height={60} src={joystick.src} alt="joystick image" className='w-[4rem] absolute bottom-28 right-7' />
           </ul>
         </div>
         <button onClick={changeMenuVisibility} className='btn-mobile text-[1.7rem]'><FiMenu /></button>

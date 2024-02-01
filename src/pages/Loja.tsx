@@ -14,7 +14,7 @@ const Loja = () => {
     return () => {
       handleIsLojaActive(false)
     } 
-  }, [])
+  }, [handleIsLojaActive])
 
 
   return (

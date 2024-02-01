@@ -3,6 +3,7 @@ import godofwar from '@/assets/img/aventura/bannergod.jpg'
 import donkey from '@/assets/img/aventura/donkey.jpg'
 import sea from '@/assets/img/rpg/sea1.jpg'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const carouselImages = [godofwar, donkey, sea]
 
@@ -25,7 +26,7 @@ const Carousel = () => {
     <div className='carousel '>
         {carouselImages.map((img, index) => {
             return <div className={`carousel-item relative ${index === currentIndex ? 'opacity-100' : 'opacity-0'} transition duration-1000 ease-in-out absolute inset-0`} key={index}>
-                        <img src={img.src} alt="carouselImage" />
+                        <Image width={1000} height={700} src={img.src} alt="carouselImage" />
                    </div>
         })}
         <Link href='/Loja' className='btn' >Ir para loja</Link>
